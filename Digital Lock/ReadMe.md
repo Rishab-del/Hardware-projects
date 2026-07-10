@@ -80,6 +80,11 @@ An Arduino-based smart door lock system that uses a keypad for password authenti
 - Access Control Systems
 
 ---
+## Circuit Diagram
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/54c772e2-cff0-4a48-905f-c22fb8188010" />
+
+---
 
 ## 👨‍💻 Author
 
