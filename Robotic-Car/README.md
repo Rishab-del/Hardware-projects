@@ -99,6 +99,10 @@ An Arduino-based 4WD Smart Robot Car capable of autonomous navigation using mult
 - Obstacle Avoidance
 
 ---
+## Circuit Connections
+<img width="1535" height="1024" alt="image" src="https://github.com/user-attachments/assets/fe0201cc-b6f1-4bdb-8627-dd700806ba6f" />
+
+---
 
 ## 👨‍💻 Author
 **Rishabh Patel**  
