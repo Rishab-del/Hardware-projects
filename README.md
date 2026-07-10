@@ -5,7 +5,6 @@ This repository contains the hardware and embedded systems projects developed as
 The projects focus on robotics, embedded systems, automation, IoT, and Arduino-based product development while applying practical engineering concepts to solve real-world problems.
 
 ## 💻 Tech Stack
-
 <p align="left">
 
 <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white"/>
