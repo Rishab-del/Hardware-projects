@@ -6,19 +6,25 @@ The projects focus on robotics, embedded systems, automation, IoT, and Arduino-b
 
 ## 💻 Tech Stack
 
-- Arduino Uno
-- Arduino IDE
-- Embedded C/C++
-- Robotics
-- Embedded Systems
-- Sensor Interfacing
-- Motor Control
-- Servo Control
-- LCD Interfacing
-- Keypad Interfacing
-- Circuit Design & Prototyping
+<p align="left">
 
----
+<img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white"/>
+<img src="https://img.shields.io/badge/Embedded%20C-00599C?style=for-the-badge&logo=c&logoColor=white"/>
+<img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white"/>
+<img src="https://img.shields.io/badge/Arduino%20IDE-00979D?style=for-the-badge&logo=arduino&logoColor=white"/>
+<img src="https://img.shields.io/badge/Robotics-FF6F00?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Embedded%20Systems-4CAF50?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/IoT-0A66C2?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/L298N%20Motor%20Driver-E53935?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/HC--SR04-Ultrasonic-blue?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Servo%20Motor-8E24AA?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/LCD%2016x2-00ACC1?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Keypad-607D8B?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/LDR%20Sensor-795548?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/IR%20Remote-3F51B5?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/IR%20Receiver-5C6BC0?style=for-the-badge"/>
+
+</p>
 
 ## 🛠 Skills Demonstrated
 
