@@ -1,0 +1,153 @@
+// Ultrasonic Pins
+const int trig = 7 , echoPin = 6;
+
+// Motor Driver Pins
+int IN1 = 8, IN2 = 9, ENA = 10 , IN3 = 12, IN4 = 13, ENB = 11;
+
+// LDR Pins
+int L = A0 , R = A1;
+
+//---------------- Distance ----------------//
+long readDistance() {
+  digitalWrite(trig, LOW);
+  delayMicroseconds(2);
+
+  digitalWrite(trig, HIGH);
+  delayMicroseconds(10);
+
+  digitalWrite(trig, LOW);
+
+  long dur = pulseIn(echoPin, HIGH, 30000);
+
+  if (dur == 0)
+    return 999;
+
+  return dur * 0.034 / 2;
+}
+
+//---------------- Motors ----------------//
+void forward(int speed) {
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+
+  analogWrite(ENA, speed);
+  analogWrite(ENB, speed);
+}
+
+void stopMotors() {
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
+
+  analogWrite(ENA, 0);
+  analogWrite(ENB, 0);
+}
+
+void backTurn() {
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+
+  analogWrite(ENA, 200);
+  analogWrite(ENB, 200);
+}
+
+// Turn Left
+void leftTurn() {
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+
+  analogWrite(ENA, 0);
+  analogWrite(ENB, 180);
+}
+
+// Turn Right
+void rightTurn() {
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
+
+  analogWrite(ENA, 180);
+  analogWrite(ENB, 0);
+}
+
+//---------------- Setup ----------------//
+void setup() {
+
+  pinMode(trig, OUTPUT);
+  pinMode(echoPin, INPUT);
+
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+  pinMode(ENA, OUTPUT);
+
+  pinMode(IN3, OUTPUT);
+  pinMode(IN4, OUTPUT);
+  pinMode(ENB, OUTPUT);
+
+  pinMode(L, INPUT);
+  pinMode(R, INPUT);
+
+  Serial.begin(9600);
+}
+
+//---------------- Loop ----------------//
+void loop() {
+
+  long distance = readDistance();
+
+  Serial.print("Distance: ");
+  Serial.print(distance);
+  Serial.println(" cm");
+
+  // Priority 1 : Obstacle Avoidance
+  if (distance < 20) {
+
+    stopMotors();
+    delay(100);
+
+    backTurn();
+    delay(500);
+
+    stopMotors();
+    delay(100);
+
+    return;
+  }
+
+  // Priority 2 : LDR Following
+  int left = analogRead(L);
+  int right = analogRead(R);
+
+  Serial.print("Left: ");
+  Serial.print(left);
+  Serial.print("  Right: ");
+  Serial.println(right);
+
+  if (left > right + 50) {
+
+    leftTurn();
+
+  } else if (right > left + 50) {
+
+    rightTurn();
+
+  } else {
+
+    forward(180);
+  }
+
+  delay(50);
+}
